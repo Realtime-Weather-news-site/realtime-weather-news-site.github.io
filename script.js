@@ -81,3 +81,22 @@ fetch("https://www.jma.go.jp/bosai/warning/data/warning.json")
     document.getElementById("warning").innerHTML =
       active.length ? `<div class="warning">${active.join("<br>")}</div>` : "警報なし";
   });
+
+/* ========= マップ ========= */
+const map = L.map('map').setView([36.2, 138.3], 5);
+
+// 地図タイル
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap'
+}).addTo(map);
+
+// 現在地
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(pos => {
+    L.marker([pos.coords.latitude, pos.coords.longitude])
+      .addTo(map)
+      .bindPopup("📍 現在地");
+  });
+}
+
+let eqMarker = null;
