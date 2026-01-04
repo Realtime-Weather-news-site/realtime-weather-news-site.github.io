@@ -1,55 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>地震・天気リアルタイムダッシュボード</title>
-
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="" crossorigin=""/>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<title>Japan Disaster Monitor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <h1>地震・天気リアルタイム</h1>
-    <div class="meta">
-      <span id="last-updated">更新: --</span>
-      <button id="notify-toggle">通知: OFF</button>
-    </div>
-  </header>
 
-  <main class="layout">
-    <section class="map-wrap">
-      <div id="map"></div>
-    </section>
+<header>
+  <h1>🇯🇵 Japan Disaster Monitor</h1>
+</header>
 
-    <aside class="panel">
-      <div class="card">
-        <h2>最新地震</h2>
-        <ul id="quake-list" class="list"></ul>
-      </div>
+<main>
 
-      <div class="card">
-        <h2>天気（現在）</h2>
-        <div id="weather-card">
-          <div id="weather-location">--</div>
-          <div id="weather-desc">読み込み中…</div>
-          <div id="weather-temp">-- °C</div>
-        </div>
-      </div>
+<section>
+  <h2>🌏 リアルタイム地震</h2>
+  <div id="eq-latest">接続中...</div>
+  <ul id="eq-history"></ul>
+</section>
 
-      <div class="card">
-        <h2>設定</h2>
-        <label>緯度 <input id="lat" type="number" step="0.01" value="34.65"></label>
-        <label>経度 <input id="lon" type="number" step="0.01" value="134.98"></label>
-        <label>天気APIキー <input id="owm-key" type="text" placeholder="OpenWeatherMap API Key"></label>
-        <button id="apply-loc">適用</button>
-      </div>
-    </aside>
-  </main>
+<section>
+  <h2>🌦 天気情報</h2>
+  <select id="area"></select>
+  <div id="weather"></div>
+</section>
 
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="" crossorigin=""></script>
-  <script src="app.js"></script>
+<section>
+  <h2>⚠️ 警報・注意報</h2>
+  <div id="warning">取得中...</div>
+</section>
+
+</main>
+
+<audio id="alertSound" src="alert.mp3"></audio>
+<script src="script.js"></script>
 </body>
 </html>
