@@ -52,3 +52,16 @@ select {
   color: white;
   border: 1px solid #1e293b;
 }
+
+/* 既存CSSはそのまま */
+
+#map {
+  width: 100%;
+  height: 320px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.leaflet-popup-content {
+  font-size: 14px;
+}
