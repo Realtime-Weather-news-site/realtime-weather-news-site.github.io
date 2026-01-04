@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  background: #020617;
+  color: #e5e7eb;
+  font-family: system-ui;
+}
+
+header {
+  padding: 16px;
+  background: #020617;
+  text-align: center;
+  border-bottom: 1px solid #1e293b;
+}
+
+main {
+  padding: 16px;
+}
+
+section {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+#eq-history {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+#eq-history li {
+  padding: 6px;
+  border-bottom: 1px solid #1e293b;
+}
+
+.shindo-1 { color:#a5f3fc }
+.shindo-3 { color:#fde68a }
+.shindo-5 { color:#f97316 }
+.shindo-6 { color:#ef4444 }
+
+.warning {
+  color: #f87171;
+  font-weight: bold;
+}
+
+select {
+  padding: 6px;
+  margin-bottom: 10px;
+  background: #020617;
+  color: white;
+  border: 1px solid #1e293b;
+}
